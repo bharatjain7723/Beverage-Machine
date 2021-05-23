@@ -1,0 +1,18 @@
+{
+    "db": {
+        "mongo": {
+            "userName": "bharatjain7723",
+            "password": "bharat@mongo123",
+            "dbName": "Beverage"
+        }
+    },
+    "aws": {
+        "credentials": {
+            "accessKeyId": "",
+            "secretAccessKey": "",
+            "region": "ap-south-1"
+        }
+    },
+    "info_email": "alert@beverages.com",
+    "appBaseUrl": "http://localhost:3000/"
+}
