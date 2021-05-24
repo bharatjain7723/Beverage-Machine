@@ -12,11 +12,11 @@ function sendOk(res, data) {
     })
 }
 
-function badRequest(res) {
+function badRequest(res, message=null) {
     return res.status(400).json({
         status: {
             code: 400,
-            message: 'Operation failed'
+            message: message ? message : 'Operation failed'
         },
         data: {}
     })

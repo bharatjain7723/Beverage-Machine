@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const ingredientSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
@@ -12,5 +12,5 @@ const ingredientSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.Model('Ingredient', ingredientSchema)
+module.exports = mongoose.model('Ingredient', ingredientSchema)
 

@@ -1,16 +1,20 @@
-import mongoose from 'mongoose';
-import { Ingredients } from '../Schema/ingredient';
+const mongoose = require('mongoose');
+const Ingredients = require('../Schema/ingredient');
 
-export function addIngredient(params) {
+module.exports.addIngredient = (params) => {
+    console.log("params are: ", params);
     const ingredient = new Ingredients({
         _id: new mongoose.Types.ObjectId,
         ...params
     });
 
+    console.log(ingredient);
+
     return ingredient.save();
 }
 
-export function updateIngredient(ingredientId, params) {
+module.exports.updateIngredient = (ingredientId, params) => {
+    console.log(ingredientId, params);
     return Ingredients.updateOne(
         {_id: ingredientId},
         {
@@ -19,6 +23,6 @@ export function updateIngredient(ingredientId, params) {
     );
 }
 
-export function getIngredients() {
+module.exports.getIngredients = () => {
     return Ingredients.find();
 }

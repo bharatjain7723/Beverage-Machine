@@ -1,7 +1,11 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const beveragesSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
+    name: {
+        type: String,
+        required: true
+    },
     water: {
         type: Number,
         required: true
@@ -12,21 +16,13 @@ const beveragesSchema = mongoose.Schema({
     },
     sugar: {
         type: Number,
-        required: false
+        required: true
     },
     milk: {
         type: Number,
-        required: false
-    },
-    sugarLess: {
-        type: Boolean,
-        required: true
-    },
-    milkLess: {
-        type: Boolean,
         required: true
     }
 });
 
-module.exports = mongoose.Model('Beverages', beveragesSchema)
+module.exports = mongoose.model('Beverages', beveragesSchema)
 

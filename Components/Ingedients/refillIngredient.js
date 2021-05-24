@@ -1,21 +1,18 @@
 const IngredientsModel = require('../../Models/ingredientsModel');
 const resultWrapper = require('../../Helper/resultWrapper');
 
-module.exports.addIngredient = (req, res, next) => {
+module.exports.refillIngredient = (req, res, next) => {
+    let ingredientId = req.params.id;
     let ingParams = {
-        name: req.body.name,
         units: req.body.units
     }
 
-    console.log(req.body, ingParams);
-
     try{
-        IngredientsModel.addIngredient(ingParams)
+        IngredientsModel.updateIngredient(ingredientId, ingParams)
         .then(result => {
             let resData = {
-                id: result._id,
-                name: result.name,
-                units: result.units
+                id: ingredientId,
+                ...ingParams
             }
             resultWrapper.sendOk(res, resData);
         })

@@ -1,20 +1,17 @@
-const BeveragesModel = require('../../Models/beveragesModel');
+const IngredientsModel = require('../../Models/ingredientsModel');
 const resultWrapper = require('../../Helper/resultWrapper');
 
-module.exports.listBeverages = (req, res, next) => {
+module.exports.listIngredients = (req, res, next) => {
     try{
-        BeveragesModel.getBeverages()
+        IngredientsModel.getIngredients()
         .then(results => {
             let resData = {
                 count: results.length,
-                beverages: results.map(result => {
+                ingredients: results.map(result => {
                     return {
                         id: result._id,
                         name: result.name,
-                        water: result.water,
-                        coffee: result.coffee,
-                        sugar: result.sugar,
-                        milk: result.milk
+                        units: result.units
                     }
                 })
             }

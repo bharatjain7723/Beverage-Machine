@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
-import { Beverages } from '../Schema/beverage';
+const mongoose = require('mongoose');
+const Beverages = require('../Schema/beverage');
 
-export function addBeverage(params) {
+module.exports.addBeverage = (params) => {
     const beverage = new Beverages({
         _id: new mongoose.Types.ObjectId,
         ...params
@@ -10,7 +10,7 @@ export function addBeverage(params) {
     return beverage.save();
 }
 
-export function updateBeverage(beverageId, params) {
+module.exports.updateBeverage = (beverageId, params) => {
     return Beverages.updateOne(
         {_id: beverageId},
         {
@@ -19,6 +19,12 @@ export function updateBeverage(beverageId, params) {
     );
 }
 
-export function getBeverages() {
+module.exports.getBeverages = () => {
     return Beverages.find();
+}
+
+module.exports.getBeverageById = (beverageId) => {
+    return Beverages.findOne(
+        {'_id': beverageId}
+    )
 }
