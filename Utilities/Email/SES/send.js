@@ -4,8 +4,8 @@ const config = require('../../../configuration.json');
 const footer = fs.readFileSync(__dirname+'/../../../Utilities/Email/Templates/footer.html', 'utf-8');
 
 const sesConfig = {
-    accessKeyId = config['aws']['credentials']['accessKeyId'],
-    secretAccessKey = config['aws']['credentials']['secretAccessKey'],
+    accessKeyId: config['aws']['credentials']['accessKeyId'],
+    secretAccessKey: config['aws']['credentials']['secretAccessKey'],
     region: 'us-west-2',
     apiVersion: '2010-12-01'
 }
