@@ -8,9 +8,16 @@
     },
     "aws": {
         "credentials": {
-            "accessKeyId": "",
-            "secretAccessKey": "",
+            "accessKeyId": "SOME ACCESS KEY ID",
+            "secretAccessKey": "SOME SECRET ACCESS KEY",
             "region": "ap-south-1"
+        },
+        "ses": {
+            "domain": "beverages.com",
+            "sender": "alert@beverages.com",
+            "replyTo": "alert@beverages.com",
+            "from": "Beverage Admin",
+            "recipient": "service@beverages.com"
         }
     },
     "info_email": "alert@beverages.com",
