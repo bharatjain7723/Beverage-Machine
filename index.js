@@ -48,3 +48,5 @@ require(__dirname + "/Routes/ingredients")(settings);
 require(__dirname + "/Routes/beverages")(settings);
 
 app.listen(3000);
+
+module.exports = {app};
