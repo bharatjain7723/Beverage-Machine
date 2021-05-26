@@ -58,7 +58,7 @@ You can import this [collection](https://www.getpostman.com/collections/4e9cbf0e
 Run ```npm start``` to run the project.
 You can also run ```nodemon index.js --port=<port number> --debug``` to run in debug mode or you can remove the *--debug* flag.
 
-Note: nodemon is a tool that helps develop Nodejs based applications by automatically restarting the node application when file changes in the directory are detected. It will installed along with the packages.
+Note: nodemon is a tool that helps develop Nodejs based applications by automatically restarting the node application when file changes in the directory are detected. It will get installed along with the packages.
 
 ## Test the Project
 
